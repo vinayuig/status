@@ -1,0 +1,29 @@
+<aside class="side-nav">
+    <nav>
+      <ul>
+        <li>
+          <a (click)="toggleDropdown('homeDropdown')">ControlUp</a>
+          <ul [ngClass]="{'show': dropdowns.homeDropdown}" class="dropdown">
+            <li><a routerLink="/home/overview" routerLinkActive="active">Summary</a></li>
+            <li><a routerLink="/home/updates" routerLinkActive="active">Status</a></li>
+            <li><a routerLink="home/incidents" routerLinkActive="active">Incidents</a></li>
+            <li><a routerLink="/home/sche-maintenace" routerLinkActive="active">Scheduling Maintenace</a></li>
+          </ul>
+        </li>
+        <li>
+          <a (click)="toggleDropdown('aboutDropdown')">Island</a>
+          <ul [ngClass]="{'show': dropdowns.aboutDropdown}" class="dropdown">
+            <li><a routerLink="/about/team" routerLinkActive="active">Status</a></li>
+          </ul>
+        </li>
+        <!-- <li>
+          <a (click)="toggleDropdown('contactDropdown')">Contact</a>
+          <ul [ngClass]="{'show': dropdowns.contactDropdown}" class="dropdown">
+            <li><a routerLink="/contact/email" routerLinkActive="active">Email</a></li>
+            <li><a routerLink="/contact/phone" routerLinkActive="active">Phone</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </nav>
+  </aside>
+  

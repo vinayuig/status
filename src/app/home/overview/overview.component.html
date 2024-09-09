@@ -1,0 +1,36 @@
+<!-- Page Information -->
+<h2>{{ page.name }}</h2>
+<p>Status: {{ status.description }} ({{ status.indicator }})</p>
+
+<!-- Components Table -->
+<h3>Components</h3>
+<table mat-table [dataSource]="components" class="mat-table" class="mat-elevation-z8">
+  <ng-container *ngFor="let column of displayedColumnsComponents" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsComponents"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsComponents;"></tr>
+</table>
+
+<!-- Incidents Table -->
+<h3>Incidents</h3>
+<table mat-table [dataSource]="incidents" class="mat-table" class="mat-elevation-z8">
+  <ng-container *ngFor="let column of displayedColumnsIncidents" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsIncidents"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsIncidents;"></tr>
+</table>
+
+<!-- Scheduled Maintenances Table -->
+<h3>Scheduled Maintenances</h3>
+<table mat-table [dataSource]="scheduledMaintenances" class="mat-table" class="mat-elevation-z8">
+  <ng-container *ngFor="let column of displayedColumnsMaintenances" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+    <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumnsMaintenances"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumnsMaintenances;"></tr>
+</table>

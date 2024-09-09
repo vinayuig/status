@@ -1,0 +1,42 @@
+<h3>Incidents</h3>
+<table mat-table [dataSource]="incidents" class="mat-elevation-z8">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let incident">{{ incident.id }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let incident">{{ incident.name }}</td>
+  </ng-container>
+
+  <!-- Impact Column -->
+  <ng-container matColumnDef="impact">
+    <th mat-header-cell *matHeaderCellDef>Impact</th>
+    <td mat-cell *matCellDef="let incident">{{ incident.impact }}</td>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let incident">{{ incident.status }}</td>
+  </ng-container>
+
+  <!-- Updates Column -->
+  <ng-container matColumnDef="updates">
+    <th mat-header-cell *matHeaderCellDef>Updates</th>
+    <td mat-cell *matCellDef="let incident">
+      <div *ngFor="let update of incident.incident_updates">
+        <p><strong>Status:</strong> {{ update.status }}</p>
+        <p><strong>Update:</strong> {{ update.body }}</p>
+        <p><strong>Created At:</strong> {{ update.created_at }}</p>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

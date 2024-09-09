@@ -1,0 +1,78 @@
+/* styles.css */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+.main-container {
+  display: flex;
+  margin-top: 60px; /* Adjust based on header height */
+  margin-bottom: 40px; /* Adjust based on footer height */
+}
+
+app-side-nav {
+  width: 250px;
+  background-color: #f4f4f4;
+  height: calc(100vh - 60px); /* Adjust based on header height */
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  bottom: 40px; /* Adjust based on footer height */
+  border-right: 1px solid #ddd; /* Optional border for visual separation */
+}
+
+.main-content {
+  margin-left: 250px; /* Adjust based on side-nav width */
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+}
+
+.vertical-separator {
+  width: 1px;
+  background-color: #ddd; /* Color of the vertical line */
+  height: calc(100vh - 60px); /* Adjust based on header height */
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Style the table headers */
+.mat-header-cell {
+  background-color: #3f51b5; /* Example color: Indigo */
+  color: white; /* White text color */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center align text */
+}
+
+/* Optional: Style the table rows */
+.mat-row {
+  font-size: 14px;
+}
+
+/* Optional: Style the table cells */
+.mat-cell {
+  text-align: center; /* Center align text */
+}
+
+

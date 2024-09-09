@@ -1,0 +1,11 @@
+/* footer.component.css */
+footer {
+    background-color: #0a34f1;
+    color: white;
+    padding: 3px 0;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
